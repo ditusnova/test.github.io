@@ -11,7 +11,11 @@ const addEventOnElements = function (elements, eventType, callback) {
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 
-const toggleNav = () => navbar.classList.toggle("active");
+const toggleNav = () => {
+    navbar.classList.toggle("active");
+    document.body.classList.toggle("nav-active");
+}
+
 
 addEventOnElements(navTogglers, "click", toggleNav);
 
@@ -90,3 +94,5 @@ window.addEventListener("resize", function () {
 
     moveSliderItem();
 });
+
+
